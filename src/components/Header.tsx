@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <Globe className="h-6 w-6 text-primary" />
-          <h1 className="text-xl font-semibold">TimeZone Display</h1>
+          <h1 className="text-xl font-semibold">TimeZone</h1>
         </div>
         
         <div className="flex items-center space-x-3">

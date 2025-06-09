@@ -28,7 +28,6 @@ const Footer = () => {
     <footer className="w-full border-t border-border bg-background/80 backdrop-blur-sm mt-auto">
       <div className="container mx-auto px-4 py-8">
         <div className="text-center">
-          <h3 className="text-xl font-semibold mb-6">Connect with NAUTBOL</h3>
           
           <div className="flex justify-center space-x-6 mb-6">
             {socialLinks.map((social) => {
@@ -49,8 +48,7 @@ const Footer = () => {
           </div>
           
           <div className="text-sm text-muted-foreground">
-            <p>&copy; 2024 NAUTBOL. Built with React, Vite & Tailwind CSS</p>
-            <p className="mt-2">Made with ❤️ for the developer community</p>
+            <p>Built with React, Vite & Tailwind CSS</p>
           </div>
         </div>
       </div>

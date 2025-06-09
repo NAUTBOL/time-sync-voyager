@@ -52,10 +52,10 @@ const TimeDisplay = () => {
     <div className="w-full max-w-6xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-muted-foreground bg-clip-text text-transparent">
-          World Time Display
+          World Time Zone
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Real-time display of UTC and your local time zone with animated indicators
+          Real-time display of UTC and your local time zone with animated indicators.
         </p>
       </div>
 
