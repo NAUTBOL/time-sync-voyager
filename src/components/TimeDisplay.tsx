@@ -51,69 +51,81 @@ const TimeDisplay = () => {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-muted-foreground bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-6xl font-bold mb-4 gradient-text animate-gradient-x">
           World Time Display
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Real-time display of UTC and your local time zone with animated indicators
+          Real-time display of UTC and your local time zone with <span className="text-cyan">animated indicators</span>
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 mb-8">
         {/* UTC Time */}
-        <Card className="p-8 bg-card border-border hover:border-primary/50 transition-colors">
-          <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <Globe className="h-16 w-16 text-primary animate-pulse-slow" />
+        <div className="gradient-border">
+          <Card className="p-8 bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300">
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <div className="p-4 rounded-full bg-gradient-to-r from-blue to-cyan animate-pulse-slow">
+                  <Globe className="h-16 w-16 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold mb-2 text-blue">UTC Time</h3>
+              <div className="text-5xl md:text-6xl font-bold mb-4 font-mono gradient-text">
+                {formatTime(currentTime, 'UTC')}
+              </div>
+              <p className="text-lg text-muted-foreground">
+                {formatDate(currentTime, 'UTC')}
+              </p>
+              <div className="mt-4 text-sm text-cyan">
+                Coordinated Universal Time
+              </div>
             </div>
-            <h3 className="text-2xl font-semibold mb-2 text-primary">UTC Time</h3>
-            <div className="text-5xl md:text-6xl font-bold mb-4 font-mono">
-              {formatTime(currentTime, 'UTC')}
-            </div>
-            <p className="text-lg text-muted-foreground">
-              {formatDate(currentTime, 'UTC')}
-            </p>
-            <div className="mt-4 text-sm text-muted-foreground">
-              Coordinated Universal Time
-            </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
 
         {/* Local Time */}
-        <Card className="p-8 bg-card border-border hover:border-primary/50 transition-colors">
-          <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <MapPin className="h-16 w-16 text-primary animate-bounce-slow" />
+        <div className="gradient-border">
+          <Card className="p-8 bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300">
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                <div className="p-4 rounded-full bg-gradient-to-r from-purple to-pink animate-bounce-slow">
+                  <MapPin className="h-16 w-16 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold mb-2 text-purple">Local Time</h3>
+              <div className="text-5xl md:text-6xl font-bold mb-4 font-mono gradient-text">
+                {formatTime(currentTime)}
+              </div>
+              <p className="text-lg text-muted-foreground">
+                {formatDate(currentTime)}
+              </p>
+              <div className="mt-4 text-sm text-pink">
+                {timeZone} ({getTimeOffset()})
+              </div>
             </div>
-            <h3 className="text-2xl font-semibold mb-2 text-primary">Local Time</h3>
-            <div className="text-5xl md:text-6xl font-bold mb-4 font-mono">
-              {formatTime(currentTime)}
-            </div>
-            <p className="text-lg text-muted-foreground">
-              {formatDate(currentTime)}
-            </p>
-            <div className="mt-4 text-sm text-muted-foreground">
-              {timeZone} ({getTimeOffset()})
-            </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
       </div>
 
       {/* Time Difference Indicator */}
-      <Card className="p-6 bg-accent/50 border-border">
-        <div className="text-center">
-          <div className="flex justify-center items-center mb-4">
-            <Clock className="h-8 w-8 text-primary mr-3" />
-            <h4 className="text-xl font-semibold">Time Difference</h4>
+      <div className="gradient-border">
+        <Card className="p-6 bg-gradient-to-r from-card/50 to-accent/30 backdrop-blur-sm">
+          <div className="text-center">
+            <div className="flex justify-center items-center mb-4">
+              <div className="p-2 rounded-lg bg-gradient-to-r from-green to-yellow mr-3">
+                <Clock className="h-8 w-8 text-white" />
+              </div>
+              <h4 className="text-xl font-semibold text-green">Time Difference</h4>
+            </div>
+            <div className="text-3xl font-bold gradient-text">
+              {getTimeOffset()}
+            </div>
+            <p className="text-muted-foreground mt-2">
+              Your local time is <span className="text-yellow font-semibold">{getTimeOffset()}</span> from UTC
+            </p>
           </div>
-          <div className="text-3xl font-bold text-primary">
-            {getTimeOffset()}
-          </div>
-          <p className="text-muted-foreground mt-2">
-            Your local time is {getTimeOffset()} from UTC
-          </p>
-        </div>
-      </Card>
+        </Card>
+      </div>
     </div>
   );
 };
