@@ -67,7 +67,7 @@ const TimeDisplay = () => {
               <Globe className="h-16 w-16 text-primary animate-pulse-slow" />
             </div>
             <h3 className="text-2xl font-semibold mb-2 text-primary">UTC Time</h3>
-            <div className="text-5xl md:text-6xl font-bold mb-4 font-mono">
+            <div className="text-5xl md:text-6xl font-bold mb-4">
               {formatTime(currentTime, 'UTC')}
             </div>
             <p className="text-lg text-muted-foreground">
@@ -86,7 +86,7 @@ const TimeDisplay = () => {
               <MapPin className="h-16 w-16 text-primary animate-bounce-slow" />
             </div>
             <h3 className="text-2xl font-semibold mb-2 text-primary">Local Time</h3>
-            <div className="text-5xl md:text-6xl font-bold mb-4 font-mono">
+            <div className="text-5xl md:text-6xl font-bold mb-4">
               {formatTime(currentTime)}
             </div>
             <p className="text-lg text-muted-foreground">
