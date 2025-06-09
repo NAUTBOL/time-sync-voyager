@@ -27,6 +27,10 @@ const Footer = () => {
     }
   ];
 
+  const handleSocialClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <footer className="w-full border-t border-border/50 bg-background/80 backdrop-blur-sm mt-auto">
       <div className="container mx-auto px-4 py-8">
@@ -41,8 +45,8 @@ const Footer = () => {
                   key={social.name}
                   variant="ghost"
                   size="lg"
-                  className={`p-4 bg-gradient-to-r ${social.gradient} text-white rounded-full shadow-lg ${social.hoverColor} transition-all hover:scale-110 hover:shadow-lg`}
-                  onClick={() => window.open(social.url, '_blank')}
+                  className={`p-4 bg-gradient-to-r ${social.gradient} text-white rounded-full shadow-lg ${social.hoverColor} transition-all hover:scale-110 hover:shadow-lg cursor-pointer`}
+                  onClick={() => handleSocialClick(social.url)}
                   aria-label={`Visit ${social.name} profile`}
                 >
                   <IconComponent className="h-6 w-6" />
