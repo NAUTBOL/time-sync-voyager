@@ -7,23 +7,17 @@ const Footer = () => {
     {
       name: "Twitter",
       url: "https://x.com/NAUTBOL",
-      icon: Twitter,
-      gradient: "from-blue to-cyan",
-      hoverColor: "hover:shadow-blue/25"
+      icon: Twitter
     },
     {
       name: "LinkedIn", 
       url: "https://www.linkedin.com/in/leandrotorressilva/",
-      icon: Linkedin,
-      gradient: "from-blue to-purple",
-      hoverColor: "hover:shadow-blue/25"
+      icon: Linkedin
     },
     {
       name: "GitHub",
       url: "https://github.com/NAUTBOL/",
-      icon: Github,
-      gradient: "from-purple to-pink",
-      hoverColor: "hover:shadow-purple/25"
+      icon: Github
     }
   ];
 
@@ -43,9 +37,9 @@ const Footer = () => {
               return (
                 <Button
                   key={social.name}
-                  variant="ghost"
+                  variant="outline"
                   size="lg"
-                  className={`p-4 bg-gradient-to-r ${social.gradient} text-white rounded-full shadow-lg ${social.hoverColor} transition-all hover:scale-110 hover:shadow-lg cursor-pointer`}
+                  className="p-4 border-muted-foreground/30 hover:border-foreground/50 transition-all hover:scale-110 cursor-pointer"
                   onClick={() => handleSocialClick(social.url)}
                   aria-label={`Visit ${social.name} profile`}
                 >
