@@ -55,15 +55,7 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				purple: 'hsl(var(--purple))',
-				blue: 'hsl(var(--blue))',
-				cyan: 'hsl(var(--cyan))',
-				green: 'hsl(var(--green))',
-				yellow: 'hsl(var(--yellow))',
-				orange: 'hsl(var(--orange))',
-				red: 'hsl(var(--red))',
-				pink: 'hsl(var(--pink))'
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -86,22 +78,11 @@ export default {
 					to: {
 						height: '0'
 					}
-				},
-				'gradient-x': {
-					'0%, 100%': {
-						'background-size': '200% 200%',
-						'background-position': 'left center'
-					},
-					'50%': {
-						'background-size': '200% 200%',
-						'background-position': 'right center'
-					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'gradient-x': 'gradient-x 3s ease infinite'
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
