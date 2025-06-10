@@ -18,7 +18,7 @@ const Header = () => {
             className="hover:bg-accent transition-colors"
             onClick={() => window.open('https://www.paypal.com/paypalme/NAUTBOL', '_blank')}
           >
-            <Heart className="h-4 w-4 mr-2" />
+            <Heart className="h-4 w-4" />
             Donate
           </Button>
           
@@ -28,7 +28,7 @@ const Header = () => {
             className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
             onClick={() => window.open('https://www.kuantyk.com/', '_blank')}
           >
-            <Globe className="h-4 w-4 mr-2" />
+            <Globe className="h-4 w-4" />
             More Apps
           </Button>
         </div>
